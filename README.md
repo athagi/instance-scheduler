@@ -16,9 +16,11 @@ scheduler-cli create-period --begintime 10:00 --description "10:00 to 20:00" --e
 ### Schedules
 Period を束ねる設定ができる。このPeriod が動くタイムゾーンを設定できる。
 ```
-scheduler-cli create-schedule
+scheduler-cli create-schedule --timezone asia/tokyo --name test-schedule --periods test-period --stack test-instance-scheduler
+```
 
-
-## usage
+### meke relationship 
+EC2のタグにcFn作成時に指定した${Tagname}={対象としたいSchedule名} をつける。
+schedule で指定された時間に起動し、停止するようになる。
 
 
